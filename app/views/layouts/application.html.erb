@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Depot2</title>
+  <%= stylesheet_link_tag    'application' %>
+  <%= stylesheet_link_tag    'products' %>
+  <%= stylesheet_link_tag    'scaffolds' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= controller.controller_name %>'>
+
+<%= yield %>
+
+</body>
+</html>
