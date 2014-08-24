@@ -7,10 +7,11 @@
 <% @products.each do |product| %>
   <div class="entry">
     <%= image_tag(product.image_url) %>
-    <h3><%= product. title %></h3>
+    <h3><%= product.title %></h3>
     <%= sanitize(product.description) %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= button_to 'カートに入れる', line_items_path(product_id: product) %>
+      <%= button_to 'カートに入れる', line_items_path(product_id: product),
+        remote: true %>
     </div>
 <% end %>

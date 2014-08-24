@@ -1,5 +1,5 @@
 class CombineItemsInCart < ActiveRecord::Migration
-  def up
+  def self.up
     #カート内に重複商品が存在した場合に１つに置き換える
     Cart.all.each do |cart| #カートの繰り返し処理開始
       sums = cart.line_items.group(:product_id).sum(:quantity) #品目の合計数値をproduct_idでグループ化して求める
@@ -15,6 +15,6 @@ class CombineItemsInCart < ActiveRecord::Migration
     end
   end
 
-  def down
+  def self.down
   end
 end
