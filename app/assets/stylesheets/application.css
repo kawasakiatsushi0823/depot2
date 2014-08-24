@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ = require_self
+ = require layouts.css.scss
+ = require_tree .
