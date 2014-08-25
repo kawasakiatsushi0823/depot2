@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  skip_before_filter :authorize
   # GET /carts
   # GET /carts.json
   def index
@@ -22,9 +23,9 @@ class CartsController < ApplicationController
     respond_to do |format|
       format.html #show.html.erb
       format.json { render json: @cart }
+      end
     end
   end
- end
 
   # GET /carts/new
   # GET /carts/new.json

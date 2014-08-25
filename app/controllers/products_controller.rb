@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @cart = current_cart
     @products = Product.all
 
     respond_to do |format|
