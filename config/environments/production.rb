@@ -1,4 +1,17 @@
 Depot2::Application.configure do
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:          "smtp.gmail.com",
+    port:             587,
+    domain:           "domain.of.sender.net",
+    authentication:   "plain",
+    user_name:        "dave",
+    password:         "select",
+    enable_starttls_auto: true
+  }
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
